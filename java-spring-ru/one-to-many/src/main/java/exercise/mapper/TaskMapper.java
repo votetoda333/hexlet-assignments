@@ -11,8 +11,6 @@ import org.mapstruct.MappingTarget;
 import org.mapstruct.NullValuePropertyMappingStrategy;
 import org.mapstruct.ReportingPolicy;
 
-import java.util.List;
-
 @Mapper(
         nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE,
         componentModel = MappingConstants.ComponentModel.SPRING,
@@ -22,9 +20,6 @@ public abstract class TaskMapper {
 
     @Mapping(target = "assignee.id", source = "assigneeId")
     public abstract Task map(TaskCreateDTO dto);
-
-    @Mapping(target = "assignee.id", source = "assigneeId")
-    public abstract List<TaskDTO> map(List<Task> tasks);
     @Mapping(source = "assignee.id", target = "assigneeId")
     public abstract TaskDTO map(Task model);
 
