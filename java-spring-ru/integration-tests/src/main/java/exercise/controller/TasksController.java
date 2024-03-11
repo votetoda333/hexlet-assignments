@@ -30,7 +30,7 @@ public class TasksController {
         return taskRepository.findAll();
     }
 
-    @GetMapping(path = "/tasks")
+    @GetMapping(path = "/{id}")
     public Task show(@PathVariable long id) {
 
         var task =  taskRepository.findById(id)

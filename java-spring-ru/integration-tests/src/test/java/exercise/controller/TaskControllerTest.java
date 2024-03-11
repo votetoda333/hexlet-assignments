@@ -22,12 +22,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import net.datafaker.Faker;
 import exercise.repository.TaskRepository;
 import exercise.model.Task;
-import org.springframework.transaction.annotation.Transactional;
 
 // BEGIN
 @SpringBootTest
 @AutoConfigureMockMvc
-@Transactional
 // END
 class ApplicationTest {
 
@@ -42,8 +40,6 @@ class ApplicationTest {
 
     @Autowired
     private TaskRepository taskRepository;
-
-    private Task testTask;
 
 
     @Test
@@ -146,4 +142,5 @@ class ApplicationTest {
         task = taskRepository.findById(task.getId()).orElse(null);
         assertThat(task).isNull();
     }
+    // END
 }
